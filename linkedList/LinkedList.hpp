@@ -38,10 +38,16 @@ bool LinkedList<T>::search(T value) const
 	Node<T>* temp = m_front;
 	bool isFound = false;
 
-	while (isFound == false && m_front == nullptr)
+	while ((isFound == false) && (m_front != nullptr))
 	{
 		if(m_front->getValue() == value);
-		
+		{
+			isFound = true;
+		}
+		else
+		{
+			temp = temp->getNext();
+		}
 	}
 
 	return(isFound);
